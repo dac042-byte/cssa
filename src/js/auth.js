@@ -43,19 +43,30 @@ if (document.getElementById('signup-form')) {
   document.getElementById('signup-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const email = document.getElementById('email').value.trim();
-    const displayName = document.getElementById('display-name').value.trim();
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
+    const emailInput = document.getElementById('email');
+    const displayNameInput = document.getElementById('display-name');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+
+    const email = emailInput.value.trim();
+    const displayName = displayNameInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
     // Validation
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
+      passwordInput.value = '';
+      confirmPasswordInput.value = '';
+      passwordInput.focus();
       return;
     }
 
     if (password.length < 6) {
       alert('Password must be at least 6 characters long!');
+      passwordInput.value = '';
+      confirmPasswordInput.value = '';
+      passwordInput.focus();
       return;
     }
 
@@ -64,6 +75,8 @@ if (document.getElementById('signup-form')) {
     // Check if user already exists
     if (users.find(u => u.email === email)) {
       alert('An account with this email already exists!');
+      emailInput.focus();
+      emailInput.select();
       return;
     }
 
@@ -117,8 +130,10 @@ if (document.getElementById('signin-form')) {
   document.getElementById('signin-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value;
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
     const rememberMeChecked = document.getElementById('remember-me').checked;
 
     const users = readUsers();
@@ -130,6 +145,12 @@ if (document.getElementById('signin-form')) {
 
     if (!user || user.password !== password) {
       alert('Invalid username/email or password!');
+
+      // Clear password and refocus for retry
+      passwordInput.value = '';
+      usernameInput.focus();
+      usernameInput.select();
+
       return;
     }
 
