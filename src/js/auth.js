@@ -21,8 +21,12 @@ function initUserDatabase() {
 function readUsers() {
   initUserDatabase();
   try {
+    console.log('Reading users from:', userDataPath);
     const data = fs.readFileSync(userDataPath, 'utf8');
-    return JSON.parse(data).users;
+    console.log('File contents:', data);
+    const parsed = JSON.parse(data);
+    console.log('Parsed users count:', parsed.users.length);
+    return parsed.users;
   } catch (error) {
     console.error('Error reading users:', error);
     return [];
@@ -32,7 +36,10 @@ function readUsers() {
 // Write users to file
 function writeUsers(users) {
   try {
+    console.log('Writing users to:', userDataPath);
+    console.log('Number of users to write:', users.length);
     fs.writeFileSync(userDataPath, JSON.stringify({ users }, null, 2));
+    console.log('Users written successfully!');
   } catch (error) {
     console.error('Error writing users:', error);
   }
@@ -145,12 +152,30 @@ if (document.getElementById('signin-form')) {
     const users = readUsers();
     console.log('Total users in database:', users.length);
 
+    // Debug: Show all usernames in database
+    if (users.length > 0) {
+      console.log('Available usernames:', users.map(u => u.username));
+      console.log('Available emails:', users.map(u => u.email));
+    } else {
+      console.log('WARNING: No users found in database!');
+    }
+
     // Find user by username or email
     const user = users.find(u =>
       u.username === username || u.email === username
     );
 
     console.log('User found:', user ? 'Yes' : 'No');
+
+    if (user) {
+      console.log('Found user details:', {
+        username: user.username,
+        email: user.email,
+        hasPassword: !!user.password,
+        passwordLength: user.password ? user.password.length : 0
+      });
+      console.log('Entered password length:', password.length);
+    }
 
     if (!user) {
       console.log('Sign-in failed: User not found');
