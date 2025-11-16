@@ -118,17 +118,21 @@ if (document.getElementById('signup-form')) {
 
 // Sign In Handler
 if (document.getElementById('signin-form')) {
-  // Check if user should be auto-logged in
+  // Check if user should be auto-logged in (only if remember me is checked)
   const rememberMe = localStorage.getItem('rememberMe');
   const currentUser = localStorage.getItem('currentUser');
 
   if (rememberMe === 'true' && currentUser) {
-    // Auto-login
-    window.location.href = 'main-menu.html';
+    console.log('Auto-login: Redirecting to main menu');
+    // Auto-login - delay slightly to avoid race conditions
+    setTimeout(() => {
+      window.location.href = 'main-menu.html';
+    }, 100);
   }
 
   document.getElementById('signin-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    console.log('Sign-in form submitted');
 
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
@@ -136,23 +140,37 @@ if (document.getElementById('signin-form')) {
     const password = passwordInput.value;
     const rememberMeChecked = document.getElementById('remember-me').checked;
 
+    console.log('Attempting to sign in with username:', username);
+
     const users = readUsers();
+    console.log('Total users in database:', users.length);
 
     // Find user by username or email
     const user = users.find(u =>
       u.username === username || u.email === username
     );
 
-    if (!user || user.password !== password) {
-      alert('Invalid username/email or password!');
+    console.log('User found:', user ? 'Yes' : 'No');
 
-      // Clear password and refocus for retry
+    if (!user) {
+      console.log('Sign-in failed: User not found');
+      alert('Invalid username/email or password!');
       passwordInput.value = '';
       usernameInput.focus();
       usernameInput.select();
-
       return;
     }
+
+    if (user.password !== password) {
+      console.log('Sign-in failed: Incorrect password');
+      alert('Invalid username/email or password!');
+      passwordInput.value = '';
+      usernameInput.focus();
+      usernameInput.select();
+      return;
+    }
+
+    console.log('Sign-in successful!');
 
     // Set current user
     localStorage.setItem('currentUser', JSON.stringify(user));
