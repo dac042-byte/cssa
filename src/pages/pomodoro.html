@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Pomodoro Timer</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="feature-container">
+      <div class="feature-header">
+        <button class="btn-back" id="back-btn">←</button>
+        <h2 class="feature-title" data-translate="pomodoro">Pomodoro Timer</h2>
+      </div>
+
+      <div class="feature-content">
+        <!-- Timer Display -->
+        <div class="timer-display">
+          <div class="timer-value" id="timer-display">25:00</div>
+          <div class="timer-label" id="timer-mode" data-translate="work-time">Work Time</div>
+
+          <div class="timer-controls">
+            <button class="btn-timer" id="start-btn" data-translate="start">Start</button>
+            <button class="btn-timer" id="pause-btn" data-translate="pause">Pause</button>
+            <button class="btn-timer stop" id="reset-btn" data-translate="reset">Reset</button>
+          </div>
+        </div>
+
+        <!-- Timer Settings -->
+        <div class="timer-settings">
+          <h3 style="font-size: 18px; color: #2c5f2d; margin-bottom: 15px;" data-translate="timer-settings">
+            Timer Settings
+          </h3>
+
+          <div class="timer-setting-item">
+            <label for="work-duration" data-translate="work-duration">Work Duration (minutes)</label>
+            <input type="number" id="work-duration" min="1" max="120" value="25">
+          </div>
+
+          <div class="timer-setting-item">
+            <label for="rest-duration" data-translate="rest-duration">Rest Duration (minutes)</label>
+            <input type="number" id="rest-duration" min="1" max="60" value="5">
+          </div>
+
+          <button class="btn-save" id="save-settings" data-translate="apply-settings">Apply Settings</button>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e9; border-radius: 8px; font-size: 13px; color: #555;">
+          <strong data-translate="pomodoro-info">About Pomodoro:</strong>
+          <p data-translate="pomodoro-explanation">
+            The Pomodoro Technique helps you focus on tasks by breaking work into intervals.
+            Work for the set duration, then take a short rest. This improves productivity and prevents burnout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       AUDIO PLACEHOLDER - ALARM SOUND
+       Replace the alarm sound file below with your custom audio
+
+       To add your custom alarm sound:
+       1. Place your audio file in src/assets/sounds/
+       2. Update the src attribute below
+       3. Supported formats: MP3, WAV, OGG
+
+       Current placeholder: Default browser beep (data URL)
+       ======================================== -->
+  <audio id="alarm-sound" preload="auto">
+    <!-- PLACEHOLDER: Replace with your custom alarm sound -->
+    <!-- Example: <source src="../assets/sounds/alarm.mp3" type="audio/mpeg"> -->
+    <source src="data:audio/wav;base64,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" type="audio/wav">
+  </audio>
+
+  <script src="../js/language.js"></script>
+  <script src="../js/pomodoro.js"></script>
+</body>
+</html>

@@ -1,0 +1,763 @@
+/* ============================================
+   FALLOW APP - MAIN STYLESHEET
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #87CEEB; /* Sky blue */
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #87CEEB; /* Sky blue */
+  position: relative;
+}
+
+/* ============================================
+   AUTHENTICATION PAGES (Sign In/Sign Up)
+   ============================================ */
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.auth-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c5f2d;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 12px 15px;
+  border: 2px solid #a8d8ea;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #5fa777;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 14px;
+  background-color: #5fa777;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #4a8c5f;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-link a {
+  color: #5fa777;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   WELCOME PAGE
+   ============================================ */
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.welcome-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2c5f2d;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.welcome-definition {
+  max-width: 350px;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border-left: 4px solid #5fa777;
+}
+
+.welcome-word {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c5f2d;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.welcome-pronunciation {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.welcome-meaning {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========================================
+   ANIMATION PLACEHOLDER - SPROUTING PLANTS
+   Add your custom sprouting plant animations here
+   Target: .animation-container
+   ======================================== */
+.animation-container {
+  margin-top: 30px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.plant-sprout {
+  /* PLACEHOLDER: Replace with your plant sprout images/animations */
+  width: 60px;
+  height: 60px;
+  background-color: #5fa777;
+  border-radius: 50%;
+  animation: sproutGrow 2s ease-in-out infinite;
+}
+
+@keyframes sproutGrow {
+  0%, 100% { transform: scale(0.8); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Continue button on welcome page */
+.btn-continue {
+  margin-top: 40px;
+  padding: 14px 40px;
+  background-color: #5fa777;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-continue:hover {
+  background-color: #4a8c5f;
+}
+
+/* ============================================
+   MAIN MENU / GARDEN PAGE
+   ============================================ */
+
+.main-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+/* Top section - sky blue (2/3 of screen) */
+.sky-section {
+  flex: 2;
+  background-color: #87CEEB;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bottom section - field color (1/3 of screen) */
+.field-section {
+  flex: 1;
+  background-color: #8FBC8F; /* Field green */
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Settings and Shop buttons in top right */
+.top-right-buttons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #5fa777;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+  background-color: white;
+}
+
+/* Plant buttons in field section */
+/* ========================================
+   ASSET PLACEHOLDER - PLANT BUTTONS
+   Replace these button styles with your custom plant assets
+   Target: .plant-button
+   ======================================== */
+.plant-button {
+  width: 100px;
+  height: 120px;
+  background-color: #5fa777;
+  border: 3px solid #2c5f2d;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+}
+
+.plant-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   ANIMATION PLACEHOLDER - DYING PLANTS
+   Add animations for plant health states here
+   Use classes: .plant-healthy, .plant-dying, .plant-dead
+   ======================================== */
+.plant-button.plant-dying {
+  filter: grayscale(50%);
+  opacity: 0.7;
+}
+
+.plant-button.plant-dead {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+/* ============================================
+   SETTINGS PAGE
+   ============================================ */
+
+.settings-container {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.btn-back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #5fa777;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.settings-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+.settings-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.settings-section h3 {
+  font-size: 18px;
+  color: #2c5f2d;
+  margin-bottom: 15px;
+}
+
+.settings-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.settings-value {
+  font-size: 14px;
+  color: #5fa777;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px 12px;
+  border: 2px solid #a8d8ea;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* ============================================
+   SHOP PAGE
+   ============================================ */
+
+.shop-container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.shop-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+.shop-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* ========================================
+   ASSET PLACEHOLDER - SEED ITEMS
+   Replace .seed-item with your custom seed assets
+   Use data-row attribute to style different seeds
+   ======================================== */
+.seed-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #8B4513;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seed-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seed-image-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #d4a574;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #8B4513;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seed-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+/* ============================================
+   FEATURE PAGES (Sleep, Journal, Pomodoro)
+   ============================================ */
+
+.feature-container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.feature-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+.feature-content {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Sleep Tracking Specific */
+.stat-display {
+  text-align: center;
+  padding: 30px;
+  background-color: #e8f5e9;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2c5f2d;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #666;
+}
+
+.weekly-tracker {
+  margin-top: 20px;
+}
+
+.weekly-tracker h3 {
+  font-size: 18px;
+  color: #2c5f2d;
+  margin-bottom: 15px;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-stat {
+  background-color: #c8e6c9;
+  border-radius: 8px;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.day-name {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.day-hours {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+/* Journal Specific */
+.motivational-quote {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 4px solid #5fa777;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #2c5f2d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.journal-input {
+  width: 100%;
+  min-height: 200px;
+  padding: 15px;
+  border: 2px solid #a8d8ea;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  resize: vertical;
+  background-color: white;
+}
+
+.journal-input:focus {
+  outline: none;
+  border-color: #5fa777;
+}
+
+.btn-save {
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: #5fa777;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #4a8c5f;
+}
+
+/* Pomodoro Timer Specific */
+.timer-display {
+  text-align: center;
+  padding: 40px;
+  background-color: #e8f5e9;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.timer-value {
+  font-size: 64px;
+  font-weight: bold;
+  color: #2c5f2d;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 10px;
+}
+
+.timer-label {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.btn-timer {
+  padding: 12px 24px;
+  background-color: #5fa777;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-timer:hover {
+  background-color: #4a8c5f;
+}
+
+.btn-timer.stop {
+  background-color: #d32f2f;
+}
+
+.btn-timer.stop:hover {
+  background-color: #b71c1c;
+}
+
+.timer-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timer-setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.timer-setting-item label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.timer-setting-item input[type="number"] {
+  width: 80px;
+  padding: 8px;
+  border: 2px solid #a8d8ea;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ========================================
+   AUDIO PLACEHOLDER - ALARM SOUND
+   Alarm sound file location for editing:
+   Target: #alarm-sound element
+   ======================================== */
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5fa777;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a8c5f;
+}

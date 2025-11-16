@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Settings</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="settings-container">
+      <div class="settings-header">
+        <button class="btn-back" id="back-btn">←</button>
+        <h2 class="settings-title" data-translate="settings">Settings</h2>
+      </div>
+
+      <!-- Account Information Section -->
+      <div class="settings-section">
+        <h3 data-translate="account-info">Account Information</h3>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="display-name">Display Name</span>
+          <span class="settings-value" id="user-display-name">User</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="email">Email</span>
+          <span class="settings-value" id="user-email">user@example.com</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="member-since">Member Since</span>
+          <span class="settings-value" id="member-since">2024</span>
+        </div>
+      </div>
+
+      <!-- Weekly Report Section -->
+      <div class="settings-section">
+        <h3 data-translate="weekly-report">Weekly Report</h3>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="sleep-avg">Sleep Average</span>
+          <span class="settings-value" id="sleep-avg">0h 0m</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="journal-entries">Journal Entries</span>
+          <span class="settings-value" id="journal-count">0</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="pomodoro-sessions">Pomodoro Sessions</span>
+          <span class="settings-value" id="pomodoro-count">0</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="garden-health">Garden Health</span>
+          <span class="settings-value" id="garden-health">Healthy</span>
+        </div>
+      </div>
+
+      <!-- Language Section -->
+      <div class="settings-section">
+        <h3 data-translate="language-settings">Language</h3>
+        <div class="settings-item">
+          <span class="settings-label" data-translate="select-language">Select Language</span>
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Logout Button -->
+      <div class="settings-section">
+        <button class="btn-primary" id="logout-btn" data-translate="logout">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/language.js"></script>
+  <script src="../js/settings.js"></script>
+</body>
+</html>

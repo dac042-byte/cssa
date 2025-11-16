@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Sign In</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-container">
+      <h1 class="auth-title" data-translate="signin-title">Fallow</h1>
+      <p class="auth-subtitle" data-translate="signin-subtitle">Welcome back to your garden</p>
+
+      <form class="auth-form" id="signin-form">
+        <div class="input-group">
+          <label for="username" data-translate="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password" data-translate="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember-me" name="remember-me">
+          <label for="remember-me" data-translate="remember-me">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn-primary" data-translate="signin-button">Sign In</button>
+      </form>
+
+      <div class="auth-link">
+        <span data-translate="no-account">Don't have an account?</span>
+        <a href="signup.html" data-translate="signup-link">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/language.js"></script>
+</body>
+</html>

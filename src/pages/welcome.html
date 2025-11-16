@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Welcome</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="welcome-container">
+      <h1 class="welcome-title">Fallow</h1>
+
+      <div class="welcome-definition">
+        <div class="welcome-word">fal·low</div>
+        <div class="welcome-pronunciation">/ˈfalō/</div>
+        <div class="welcome-meaning" data-translate="fallow-definition">
+          (of farmland) plowed and harrowed but left unsown for a period in order to restore its fertility;
+          usually cultivated land that is allowed to lie idle during the growing season.
+        </div>
+      </div>
+
+      <!-- ========================================
+           ANIMATION PLACEHOLDER - SPROUTING PLANTS
+           Add your custom plant sprouting animations here
+           You can replace the .plant-sprout divs with your own animated images/SVGs
+           Suggested: Use CSS animations or a library like Lottie for smooth animations
+           ======================================== -->
+      <div class="animation-container">
+        <div class="plant-sprout"></div>
+        <div class="plant-sprout"></div>
+        <div class="plant-sprout"></div>
+      </div>
+
+      <button class="btn-continue" id="continue-btn" data-translate="continue">Continue to Your Garden</button>
+    </div>
+  </div>
+
+  <script src="../js/language.js"></script>
+  <script>
+    document.getElementById('continue-btn').addEventListener('click', function() {
+      window.location.href = 'main-menu.html';
+    });
+  </script>
+</body>
+</html>

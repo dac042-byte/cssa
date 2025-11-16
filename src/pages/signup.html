@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Sign Up</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-container">
+      <h1 class="auth-title" data-translate="signup-title">Fallow</h1>
+      <p class="auth-subtitle" data-translate="signup-subtitle">Begin your journey to wellness</p>
+
+      <form class="auth-form" id="signup-form">
+        <div class="input-group">
+          <label for="email" data-translate="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="display-name" data-translate="display-name">Display Name</label>
+          <input type="text" id="display-name" name="display-name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password" data-translate="password">Password</label>
+          <input type="password" id="password" name="password" required minlength="6">
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password" data-translate="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required minlength="6">
+        </div>
+
+        <button type="submit" class="btn-primary" data-translate="signup-button">Create Account</button>
+      </form>
+
+      <div class="auth-link">
+        <span data-translate="have-account">Already have an account?</span>
+        <a href="signin.html" data-translate="signin-link">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/language.js"></script>
+</body>
+</html>

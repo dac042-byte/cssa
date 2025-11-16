@@ -1,0 +1,17 @@
+{
+  "name": "fallow",
+  "version": "1.0.0",
+  "description": "Fallow - A Mental Health Garden App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": ["mental-health", "productivity", "electron"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Sleep Tracking</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="feature-container">
+      <div class="feature-header">
+        <button class="btn-back" id="back-btn">←</button>
+        <h2 class="feature-title" data-translate="sleep-tracking">Sleep Tracking</h2>
+      </div>
+
+      <div class="feature-content">
+        <!-- Today's Sleep Duration -->
+        <div class="stat-display">
+          <div class="stat-value" id="sleep-duration">0h 0m</div>
+          <div class="stat-label" data-translate="time-offline-today">Time Offline Today</div>
+        </div>
+
+        <!-- Weekly Tracker -->
+        <div class="weekly-tracker">
+          <h3 data-translate="weekly-sleep">Weekly Sleep Overview</h3>
+          <div class="week-grid">
+            <div class="day-stat">
+              <div class="day-name" data-translate="mon">Mon</div>
+              <div class="day-hours" id="sleep-mon">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="tue">Tue</div>
+              <div class="day-hours" id="sleep-tue">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="wed">Wed</div>
+              <div class="day-hours" id="sleep-wed">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="thu">Thu</div>
+              <div class="day-hours" id="sleep-thu">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="fri">Fri</div>
+              <div class="day-hours" id="sleep-fri">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="sat">Sat</div>
+              <div class="day-hours" id="sleep-sat">0h</div>
+            </div>
+            <div class="day-stat">
+              <div class="day-name" data-translate="sun">Sun</div>
+              <div class="day-hours" id="sleep-sun">0h</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e9; border-radius: 8px; font-size: 13px; color: #555;">
+          <strong data-translate="how-it-works">How it works:</strong>
+          <p data-translate="sleep-explanation">
+            Sleep tracking monitors the time when your computer is inactive or in sleep mode.
+            This gives you insights into your digital wellness and rest patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/language.js"></script>
+  <script src="../js/sleep.js"></script>
+</body>
+</html>

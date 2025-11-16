@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallow - Shop</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="shop-container">
+      <div class="shop-header">
+        <button class="btn-back" id="back-btn">←</button>
+        <h2 class="shop-title" data-translate="shop">Seed Shop</h2>
+      </div>
+
+      <!-- ========================================
+           ASSET PLACEHOLDER - SEED ITEMS
+           Replace .seed-image-placeholder with your custom seed images
+           Each seed should have its own unique image
+           Prices increase as you go down the rows
+           Row 1: $10, Row 2: $20, Row 3: $30, Row 4: $40
+
+           To add your custom seed images:
+           1. Place your seed image files in src/assets/seeds/
+           2. Replace the .seed-image-placeholder div with:
+              <img src="../assets/seeds/seed-name.png" alt="Seed Name">
+           3. Add seed names and descriptions as needed
+           ======================================== -->
+      <div class="shop-grid">
+        <!-- Row 1 - $10 seeds -->
+        <div class="seed-item" data-row="1" data-col="1">
+          <div class="seed-image-placeholder">Seed Image 1</div>
+          <div class="seed-price">$10</div>
+        </div>
+        <div class="seed-item" data-row="1" data-col="2">
+          <div class="seed-image-placeholder">Seed Image 2</div>
+          <div class="seed-price">$10</div>
+        </div>
+
+        <!-- Row 2 - $20 seeds -->
+        <div class="seed-item" data-row="2" data-col="1">
+          <div class="seed-image-placeholder">Seed Image 3</div>
+          <div class="seed-price">$20</div>
+        </div>
+        <div class="seed-item" data-row="2" data-col="2">
+          <div class="seed-image-placeholder">Seed Image 4</div>
+          <div class="seed-price">$20</div>
+        </div>
+
+        <!-- Row 3 - $30 seeds -->
+        <div class="seed-item" data-row="3" data-col="1">
+          <div class="seed-image-placeholder">Seed Image 5</div>
+          <div class="seed-price">$30</div>
+        </div>
+        <div class="seed-item" data-row="3" data-col="2">
+          <div class="seed-image-placeholder">Seed Image 6</div>
+          <div class="seed-price">$30</div>
+        </div>
+
+        <!-- Row 4 - $40 seeds -->
+        <div class="seed-item" data-row="4" data-col="1">
+          <div class="seed-image-placeholder">Seed Image 7</div>
+          <div class="seed-price">$40</div>
+        </div>
+        <div class="seed-item" data-row="4" data-col="2">
+          <div class="seed-image-placeholder">Seed Image 8</div>
+          <div class="seed-price">$40</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/language.js"></script>
+  <script>
+    document.getElementById('back-btn').addEventListener('click', function() {
+      window.location.href = 'main-menu.html';
+    });
+
+    // Add click handlers for seed purchases
+    document.querySelectorAll('.seed-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const price = this.querySelector('.seed-price').textContent;
+        const row = this.getAttribute('data-row');
+        const col = this.getAttribute('data-col');
+
+        // TODO: Implement purchase logic
+        // - Check user's balance
+        // - Deduct price
+        // - Add seed to user's inventory
+        // - Show confirmation message
+
+        alert(`Seed selected! Price: ${price}\nRow ${row}, Column ${col}\n\nPurchase system coming soon!`);
+      });
+    });
+  </script>
+</body>
+</html>
