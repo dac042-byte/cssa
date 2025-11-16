@@ -12,6 +12,16 @@
       <h1 class="auth-title" data-translate="signin-title">Fallow</h1>
       <p class="auth-subtitle" data-translate="signin-subtitle">Welcome back to your garden</p>
 
+      <!-- Auto-login notification -->
+      <div id="auto-login-notice" style="display: none; background-color: #e8f5e9; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+        <p style="margin: 0; color: #2c5f2d; font-size: 14px;">
+          Signing in automatically... <span id="countdown">2</span>s
+        </p>
+        <p style="margin: 5px 0 0 0; font-size: 12px; color: #666;">
+          Click in the form to cancel
+        </p>
+      </div>
+
       <form class="auth-form" id="signin-form">
         <div class="input-group">
           <label for="username" data-translate="username">Username</label>

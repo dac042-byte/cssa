@@ -129,20 +129,66 @@ if (document.getElementById('signin-form')) {
   const rememberMe = localStorage.getItem('rememberMe');
   const currentUser = localStorage.getItem('currentUser');
 
+  let autoLoginTimeout = null;
+  let countdownInterval = null;
+
+  // Only auto-login if remember me was explicitly checked
   if (rememberMe === 'true' && currentUser) {
-    console.log('Auto-login: Redirecting to main menu');
-    // Auto-login - delay slightly to avoid race conditions
-    setTimeout(() => {
+    console.log('Auto-login: Redirecting to main menu in 2 seconds...');
+    console.log('Type in the username field to cancel auto-login');
+
+    // Show notification
+    const notice = document.getElementById('auto-login-notice');
+    const countdownSpan = document.getElementById('countdown');
+    if (notice) notice.style.display = 'block';
+
+    let secondsLeft = 2;
+
+    // Update countdown every second
+    countdownInterval = setInterval(() => {
+      secondsLeft--;
+      if (countdownSpan) countdownSpan.textContent = secondsLeft;
+      if (secondsLeft <= 0) {
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+
+    autoLoginTimeout = setTimeout(() => {
       window.location.href = 'main-menu.html';
-    }, 100);
+    }, 2000); // Give user 2 seconds to cancel
   }
+
+  // Cancel auto-login if user starts typing
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+
+  function cancelAutoLogin() {
+    if (autoLoginTimeout) {
+      console.log('Auto-login cancelled by user input');
+      clearTimeout(autoLoginTimeout);
+      clearInterval(countdownInterval);
+      autoLoginTimeout = null;
+      countdownInterval = null;
+
+      // Hide notification
+      const notice = document.getElementById('auto-login-notice');
+      if (notice) notice.style.display = 'none';
+    }
+  }
+
+  // Cancel auto-login on any interaction with the form
+  usernameInput.addEventListener('focus', cancelAutoLogin);
+  usernameInput.addEventListener('input', cancelAutoLogin);
+  passwordInput.addEventListener('focus', cancelAutoLogin);
+  passwordInput.addEventListener('input', cancelAutoLogin);
 
   document.getElementById('signin-form').addEventListener('submit', function(e) {
     e.preventDefault();
     console.log('Sign-in form submitted');
 
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
+    // Cancel auto-login if form is submitted
+    cancelAutoLogin();
+
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
     const rememberMeChecked = document.getElementById('remember-me').checked;
